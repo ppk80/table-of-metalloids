@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalloids Table</title>
+    <!-- Include the Averia Sans Libre font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+body {
+    font-family: 'Averia Sans Libre', Arial, sans-serif;  /* Use Averia Sans Libre font */
+    background-color: #1d131d;  /* Dark background to evoke depth and mystery */
+    color: #f4f5f4;  /* Light text for contrast */
+    display: flex;
+    flex-direction: column;  /* Stack header and table */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: radial-gradient(circle, #212123, #121112); /* A cosmic, dark gradient */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #b0b0b0;  /* Light gray for contrast */
+    margin-bottom: 20px;  /* Space below the title */
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 64, 129, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);  /* Glowing effect */
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(4, auto);  /* Adjust columns based on content */
+    gap: 5px;
+    background-color: #2b2a2a;  /* Dark background for the table */
+    border: 3px solid #444;  /* Subtle dark border */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Subtle cyan glow effect for a sci-fi look */
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 3px solid #555;  /* Subtle dark border for the elements */
+    border-radius: 8px;
+    background: linear-gradient(135deg, #343, #112, #2b2a2a); /* Organic gradient texture */
+    color: #f4f5f4;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 0, 0, 0.8);  /* Glowing edges */
+    position: relative;
+    overflow: hidden;
+}
+
+.element:hover {
+    background: linear-gradient(135deg, #444, #1c1c1c, #333);  /* Hover effect for eerie movement */
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 30px rgba(0, 0, 0, 0.9); /* Glowing effect on hover */
+}
+
+.element::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 255, 255, 0.1); /* A glowing core effect */
+    border-radius: 50%;
+    animation: pulse 2s infinite; /* Pulse effect */
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+    }
+}
+
+/* For a more eerie/alien/space effect */
+.element:hover .atomic-number, .element:hover .symbol, .element:hover .name {
+    text-shadow: 0 0 15px rgba(255, 64, 129, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);  /* Glowing text effect */
+}
+
+.atomic-number {
+    font-size: 0.8em;
+    color: #6d6d6d; /* Slightly more saturated, with a grayish tone */
+}
+
+.symbol {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #006e54; /* Slightly more saturated cyan-green */
+}
+
+.name {
+    font-size: 0.9em;
+    margin-top: 5px;
+    color: #7aabbf; /* Slightly more saturated teal */
+    text-shadow: 0 0 10px rgba(255, 64, 129, 0.8);
+}
+
+    </style>
+</head>
+<body>
+    <h1>Table of Metalloids</h1>  <!-- Title Header -->
+    <div class="table">
+        <!-- Period 2 -->
+        <div style="grid-column: 1 / 1; grid-row: 1 / 1;" class="element">
+            <div class="atomic-number">5</div>
+            <div class="symbol">B</div>
+            <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;Boron&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </div>
+
+        <!-- Period 3 -->
+        <div style="grid-column: 2 / 2; grid-row: 2 / 2;" class="element">
+            <div class="atomic-number">14</div>
+            <div class="symbol">Si</div>
+            <div class="name">Silicon</div>
+        </div>
+
+        <!-- Period 4 -->
+        <div style="grid-column: 2 / 2; grid-row: 3 / 3" class="element">
+            <div class="atomic-number">32</div>
+            <div class="symbol">Ge</div>
+            <div class="name">Germanium</div>
+        </div>
+        <div style="grid-column: 3 / 3; grid-row: 3 / 3" class="element">
+            <div class="atomic-number">33</div>
+            <div class="symbol">As</div>
+            <div class="name">&nbsp;&nbsp;&nbsp;Arsenic&nbsp;&nbsp;&nbsp;</div>
+        </div>
+
+        <!-- Period 5 -->
+        <div style="grid-column: 3 / 3; grid-row: 4 / 4;" class="element">
+            <div class="atomic-number">51</div>
+            <div class="symbol">Sb</div>
+            <div class="name">Antimony</div>
+        </div>
+        <div style="grid-column: 4 / 4; grid-row: 4 / 4;" class="element">
+            <div class="atomic-number">52</div>
+            <div class="symbol">Te</div>
+            <div class="name">Tellurium</div>
+        </div>
+
+        <!-- Period 6 -->
+        <div style="grid-column: 4 / 4; grid-row: 5 / 5;" class="element">
+            <div class="atomic-number">84</div>
+            <div class="symbol">Po</div>
+            <div class="name">&nbsp;&nbsp;Polonium&nbsp;&nbsp;</div>
+        </div>
+    </div>
+</body>
+</html>
