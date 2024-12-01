@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metalloids Table</title>
+    <title>Table of Metalloids</title>
     <!-- Include the Averia Sans Libre font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -112,55 +112,212 @@ h1 {
     text-shadow: 0 0 10px rgba(255, 64, 129, 0.8);
 }
 
+
+.deactivated {
+    opacity: 0.5; /* Reduced visibility */
+    pointer-events: none; /* Makes the element unclickable */
+    filter: grayscale(100%); /* Desaturates colors */
+    background: #3a3a3a; /* Neutral gray background for deactivated cells */
+    box-shadow: none; /* Remove glowing effect */
+    transition: all 0.3s ease-in-out; /* Smooth transition for any change */
+}
+
+.deactivated .atomic-number,
+.deactivated .symbol,
+.deactivated .name {
+    text-shadow: none; /* Remove glowing text effect */
+    color: #888; /* Muted gray text */
+}
+
+        .random-lines-section {
+            margin-top: 20px;
+            text-align: center;
+            color: #f4f5f4; /* Match the table's text color */
+        }
+
+        .random-line {
+            font-size: 1.2em;
+            margin: 5px 0;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7); /* Subtle glowing effect */
+        }
+
+        .randomize-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-family: 'Averia Sans Libre', Arial, sans-serif;
+            background: linear-gradient(135deg, #444, #1c1c1c, #333);
+            color: #f4f5f4;
+            border: 2px solid #555;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .randomize-button:hover {
+            background: linear-gradient(135deg, #555, #222, #444);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+        }
+		
+		        /* Ensure the entire grid cell behaves like a clickable button */
+        .element a {
+            text-decoration: none; /* Remove default link styling */
+            color: inherit; /* Inherit text color */
+            display: flex; /* Ensure the content aligns as before */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .element {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer; /* Pointer cursor for interactivity */
+        }
     </style>
 </head>
 <body>
     <h1>Table of Metalloids</h1>  <!-- Title Header -->
     <div class="table">
         <!-- Period 2 -->
-        <div style="grid-column: 1 / 1; grid-row: 1 / 1;" class="element">
+        <div style="grid-column: 1 / 1; grid-row: 1 / 1;" class="element deactivated">
             <div class="atomic-number">5</div>
             <div class="symbol">B</div>
             <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;Boron&nbsp;&nbsp;&nbsp;&nbsp;</div>
         </div>
 
         <!-- Period 3 -->
-        <div style="grid-column: 2 / 2; grid-row: 2 / 2;" class="element">
+		
+    <a href="silicon.html" style="grid-column: 2 / 2; grid-row: 2 / 2; text-decoration: none;" target="_blank">
+        <div class="element">
             <div class="atomic-number">14</div>
             <div class="symbol">Si</div>
             <div class="name">Silicon</div>
         </div>
+    </a>
 
         <!-- Period 4 -->
-        <div style="grid-column: 2 / 2; grid-row: 3 / 3" class="element">
+        <div style="grid-column: 2 / 2; grid-row: 3 / 3" class="element deactivated">
             <div class="atomic-number">32</div>
             <div class="symbol">Ge</div>
             <div class="name">Germanium</div>
         </div>
-        <div style="grid-column: 3 / 3; grid-row: 3 / 3" class="element">
+        <a style="grid-column: 3 / 3; grid-row: 3 / 3; text-decoration: none;" class="element" href="arsenic.html" target="_blank">
             <div class="atomic-number">33</div>
             <div class="symbol">As</div>
             <div class="name">&nbsp;&nbsp;&nbsp;Arsenic&nbsp;&nbsp;&nbsp;</div>
-        </div>
+        </a>
 
         <!-- Period 5 -->
-        <div style="grid-column: 3 / 3; grid-row: 4 / 4;" class="element">
+        <a style="grid-column: 3 / 3; grid-row: 4 / 4; text-decoration: none;" class="element" href="antimony.html" target="_blank">
             <div class="atomic-number">51</div>
             <div class="symbol">Sb</div>
             <div class="name">Antimony</div>
-        </div>
-        <div style="grid-column: 4 / 4; grid-row: 4 / 4;" class="element">
+        </a>
+        <div style="grid-column: 4 / 4; grid-row: 4 / 4;" class="element deactivated">
             <div class="atomic-number">52</div>
             <div class="symbol">Te</div>
             <div class="name">Tellurium</div>
         </div>
 
         <!-- Period 6 -->
-        <div style="grid-column: 4 / 4; grid-row: 5 / 5;" class="element">
+        <div style="grid-column: 4 / 4; grid-row: 5 / 5;" class="element deactivated">
             <div class="atomic-number">84</div>
             <div class="symbol">Po</div>
             <div class="name">&nbsp;&nbsp;Polonium&nbsp;&nbsp;</div>
         </div>
     </div>
+    <div class="random-lines-section">
+        <div class="random-line" id="line1">Line 1 will appear here.</div>
+        <div class="random-line" id="line2">Line 2 will appear here.</div>
+        <div class="random-line" id="line3">Line 3 will appear here.</div>
+        <button class="randomize-button" onclick="randomizeLines()">⚗</button>
+    </div>
+
+    <script>
+        // Hidden list of lines
+const lines = [
+    "metal likeness",
+    "it was impossible to draw a sharp",
+    "amphoteric behavior was present",
+    "I found them under a crystal vein",
+    "as tasteless as arsenic",
+    "beakers leading nowhere",
+    "I looked at this for a long time",
+    "a selenium bloom, pulseless and thin",
+    "I had never been forged",
+    "ringing through an abandoned office",
+    "great is the day, and what fractures it",
+    "it does not matter",
+    "I tried to laugh",
+    "skin like polished stone",
+    "anneal, swiftly, something",
+    "double-brained birds. and beyond",
+    "my hand is not mine",
+    "conduct electricity",
+    "resist electricity",
+    "I pushed the cake up to my nose",
+    "consume electricity",
+    "a loop of scales, like a loop of belief",
+    "a faraway city",
+    "deep in the crust",
+    "etched its name on the grass",
+    "or it was not an accident",
+    "a moth, a wild horse, then now a truck",
+    "unturn the stone now warm and full of fur",
+    "blood that is in all molecules",
+    "and a lattice of humans",
+    "hums in the silence of decay",
+    "dreams electric",
+    "solid, liquid, idea",
+	"a brittle filament, quarter a song",
+	"silvered smoke, inhaled once",
+	"only when heated to speak",
+	"a trace of boron, a trace of ghostlight",
+	"is what the earth remembers",
+	"the cracking point, a soft sigh",
+	"fusion of another to an alloy",
+	"alloy the responsibilities",
+	"it does not forgive",
+	"green, all green",
+	"like lovers abhor",
+	"freed by disguise",
+	"is taped for eternity and beyond that too",
+	"abandon this city",
+	"you've lost your heel",
+	"connect the duodenum to the data pipe",
+	"so close it is inside",
+	"like memories held in the meat",
+	"chewing on a dead metal",
+	"who has gotten the sum",
+	"we can return now",
+	"the fish have become walkers",
+	"my feet are three, and shine gray",
+	"crying, are we?",
+	"language that can be stored",
+	"phone-hand",
+	"disintegrate into earphones",
+	"a held tongue, taste",
+	"a jasmine and an amygdala, amalgam",
+	"make recalls before noon",
+	"reconfiguration of the spleen",
+	"silicon dioxide",
+	
+];
+
+        // Function to randomize lines
+        function randomizeLines() {
+            const shuffledLines = [...lines].sort(() => 0.5 - Math.random()); // Shuffle the array
+            document.getElementById("line1").innerText = shuffledLines[0];
+            document.getElementById("line2").innerText = shuffledLines[1];
+            document.getElementById("line3").innerText = shuffledLines[2];
+        }
+
+        // Initialize with random lines on page load
+        randomizeLines();
+    </script>
 </body>
 </html>
