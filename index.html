@@ -184,11 +184,11 @@ h1 {
     <h1>Table of Metalloids</h1>  <!-- Title Header -->
     <div class="table">
         <!-- Period 2 -->
-        <div style="grid-column: 1 / 1; grid-row: 1 / 1;" class="element deactivated">
+        <a style="grid-column: 1 / 1; grid-row: 1 / 1;  text-decoration: none;" class="element" href="boron.html" target="_blank">
             <div class="atomic-number">5</div>
             <div class="symbol">B</div>
             <div class="name">&nbsp;&nbsp;&nbsp;&nbsp;Boron&nbsp;&nbsp;&nbsp;&nbsp;</div>
-        </div>
+        </a>
 
         <!-- Period 3 -->
 		
@@ -201,11 +201,11 @@ h1 {
     </a>
 
         <!-- Period 4 -->
-        <div style="grid-column: 2 / 2; grid-row: 3 / 3" class="element deactivated">
+        <a style="grid-column: 2 / 2; grid-row: 3 / 3; text-decoration: none;" class="element" href="boron.html" target="_blank">
             <div class="atomic-number">32</div>
             <div class="symbol">Ge</div>
             <div class="name">Germanium</div>
-        </div>
+        </a>
         <a style="grid-column: 3 / 3; grid-row: 3 / 3; text-decoration: none;" class="element" href="arsenic.html" target="_blank">
             <div class="atomic-number">33</div>
             <div class="symbol">As</div>
@@ -218,23 +218,23 @@ h1 {
             <div class="symbol">Sb</div>
             <div class="name">Antimony</div>
         </a>
-        <div style="grid-column: 4 / 4; grid-row: 4 / 4;" class="element deactivated">
+        <a style="grid-column: 4 / 4; grid-row: 4 / 4; text-decoration: none;" class="element" href="tellurium.html" target="_blank">
             <div class="atomic-number">52</div>
             <div class="symbol">Te</div>
             <div class="name">Tellurium</div>
-        </div>
+        </a>
 
         <!-- Period 6 -->
-        <div style="grid-column: 4 / 4; grid-row: 5 / 5;" class="element deactivated">
+        <a style="grid-column: 4 / 4; grid-row: 5 / 5; text-decoration: none;" class="element" href="polonium.html" target="_blank">
             <div class="atomic-number">84</div>
             <div class="symbol">Po</div>
             <div class="name">&nbsp;&nbsp;Polonium&nbsp;&nbsp;</div>
-        </div>
+        </a>
     </div>
     <div class="random-lines-section">
-        <div class="random-line" id="line1">Line 1 will appear here.</div>
-        <div class="random-line" id="line2">Line 2 will appear here.</div>
-        <div class="random-line" id="line3">Line 3 will appear here.</div>
+        <div class="random-line" id="line1">set aside, shrine between city and wilds</div>
+        <div class="random-line" id="line2">necessity breeds mutation</div>
+        <div class="random-line" id="line3">toxic zone, become animal, mineral, deity, vegetable</div>
         <button class="randomize-button" onclick="randomizeLines()">⚗</button>
     </div>
 
@@ -339,8 +339,6 @@ const lines = [
             document.getElementById("line3").innerText = shuffledLines[2];
         }
 
-        // Initialize with random lines on page load
-        randomizeLines();
     </script>
 </body>
 </html>

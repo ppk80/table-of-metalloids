@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Averia+Sans+Libre:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antimony</title>
+    <title>Polonium</title>
     <style>
       /* Basic reset for margin and padding */
       body,
@@ -16,9 +16,17 @@
 
       /* Styling for the page background and font */
       body {
-        font-family: "Exo 2", sans-serif;
-        background-color: #3c3a40; /* Antimony metallic gray */
-        color: #cfc3a9; /* Frosty, pale bluish-white text for contrast */
+	  font-family: "Exo 2", sans-serif;
+background-color: #3a2d32; 
+/* A dark, muted purple-gray symbolizing mystery and danger */
+
+color: #f2d4a9; 
+/* A glowing pale gold, representing the radiance and toxicity of polonium */
+
+
+
+
+        /* Light text for contrast */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -114,92 +122,70 @@
         opacity: 1;
         /* Fade in effect */
       }
+	  
+	  a {
+    color: #c5a3ff; /* Soft lavender, reflective of a dreamy tone */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Makes the link stand out */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    color: #ffd580; /* Warm amber for a glowing effect on hover */
+}
+
     </style>
   </head>
   <body>
     <div class="poetry-container">
-      		<p class="pretitle">this world begins in</p>
-      <h1>Antimony</h1>	  <p>known as "the wolf of metals" or "lupus mettalorum" as stibnite, because it easily "devours" metals.</p><br><br><br>
-
+		<p class="pretitle">this world begins in</p>
+      <h1>Polonium</h1>	  <p>A highly radioactive element with no stable isotopes. It is an alpha emitter with a half-life of 138.4 days. As an alpha emitter, it's radiation can be stopped by a thin sheet of paper, but when swallowed will cause extreme damage.<br><br><br></p>
 	  <div class="divider">·</div>
       <div class="piece">
-        <h2>wolf</h2>
- <p class="stanza">
-    I know I will be excellent <br>
-    once I am devoured. <br>
-    Feet or head <br>
-    first? Start with <br>
-    my infancy: <br>
-    when I cried <br>
-    as soon as I was <br>
-    born. When I was <br>
-    held. I never want to <br>
-    return there. Then <br>
-    my childhood. When <br>
-    I shat my pants <br>
-    in kindergarten. When I <br>
-    still drank orange juice <br>
-    from the bottle and <br>
-    was laughed at. When <br>
-    my grandmother was <br>
-    younger. Whom would be <br>
-    devoured shortly. The light <br>
-    was different then <br>
-    like it was golden. <br>
-    Then my teenage years. <br>
-    the darkness <br>
-    of 5:00 and 17:00. <br>
-    Memorizing every <br>
-    bone in the body. Like mine will <br>
-    be forgotten. Daring <br>
-    a chemical taste test <br>
-    to see if I was able to, <br>
-    from an acid and an <br>
-    alkaline, and make a salt. <br>
-    We’ll soon learn the ratio <br>
-    of salt to spirit. <br>
-    My mother circumambulating <br>
-    the hospital making <br>
-    the wise decision <br>
-    to feed <br>
-    my grandfather. <br>
-    My adulthood. Frankly, <br>
-    it feels like my memories <br>
-    stopped after a certain age, <br>
-    but like the world stopped. <br>
-    so, those parts are<br>
-    a little lean. I have <br>
-    wrapped myself in salmon <br>
-    to match the <br>
-    insides of a stomach <br>
-    before i am <br>
-    completely dissolved <br>
-    I will give the mouth a kiss <br>
-    from the inside, and suck <br>
-    on all the molars: parasite <br>
-    I will know<br>
-    it from the inside: tin <br>
-    in the earth, like time <br>
-    was in my childhood <br>
-    like light endlessly <br>
-    spiraling<br>
-    into a black hole. <br>
-	disintegrating <br>
-	with it. <br>
-
-</p>
-
-<p class="stanza">
-    There are <br>
-    no wolves <br>
-    in this archipelago. <br>
-</p>
-
-<p class="stanza">
-    What swallows us then? <br>
-</p>
+        <h2 style="text-align:center;">sense of place, sense of body</h2>
+        <p class="stanza decay">Curie Polonia Marie Prussia USSR Pierre Czechoslovakia Alexander Litvinenko Danzig</p>
 
       </div>
-    </div>
+	      </div>
+		  
+<script>
+    function mutateOrDelete() {
+        // Get all <p class="stanza"> elements
+        const stanzas = document.querySelectorAll('.decay');
+        let hasText = false; // Track if there's any text left
+
+        stanzas.forEach(stanza => {
+            let text = stanza.textContent;
+
+            if (text.length > 0) {
+                hasText = true; // There's still text to mutate
+                // Choose a random index in the text
+                const index = Math.floor(Math.random() * text.length);
+
+                // Decide whether to delete or mutate
+                if (Math.random() < 0.5) {
+                    // Delete the character
+                    text = text.slice(0, index) + text.slice(index + 1);
+                } else {
+                    // Mutate the character to a random symbol or letter
+                    const randomChar = String.fromCharCode(33 + Math.random() * 94); // Printable ASCII
+                    text = text.slice(0, index) + randomChar + text.slice(index + 1);
+                }
+
+                stanza.textContent = text;
+            }
+        });
+
+        // Repeat only if there is text remaining
+        if (hasText) {
+            setTimeout(mutateOrDelete, 1000); // Faster interval
+        }
+    }
+
+    // Start the mutation
+    mutateOrDelete();
+</script>
+
+
   </body>
 </html>
