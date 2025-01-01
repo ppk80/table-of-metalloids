@@ -23,39 +23,45 @@ body {
 h1 {
     font-size: 2.5em;
     color: #b0b0b0;  /* Light gray for contrast */
-    margin-bottom: 20px;  /* Space below the title */
+    margin-bottom: 50px;  /* Space below the title */
     text-align: center;
     text-shadow: 0 0 15px rgba(255, 64, 129, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);  /* Glowing effect */
 }
 
-.table {
-    display: grid;
-    grid-template-columns: repeat(4, auto); /* Adjust columns based on content */
-    gap: 5px;
-    background-color: #2b2a2a; /* Dark background for the table */
-    border: 10px solid transparent; /* Reserve space for the border image */
-    border-image: url('border.png') 30 round; /* Apply border image */
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Subtle cyan glow effect for a sci-fi look */
-}
+    .table {
+        display: grid;
+        grid-template-columns: repeat(4, auto); /* Adjust columns based on content */
+        gap: 5px;
+        padding: 20px;
+        border-radius: 15px;
+        border: 20px transparent;
+        border-image-slice: 240 236 288 264;
+        border-image-width: 100px 100px 100px 100px;
+        border-image-outset: 80px 80px 80px 80px;
+        border-image-repeat: stretch stretch;
+        border-style: solid;
+        border-image-source: url('border.png');
+        background: radial-gradient(circle, rgba(0, 255, 255, 0.2), rgba(0, 0, 0, 0.1) 70%, transparent 100%);
+    }
 
+    .element {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px; /* Reduced padding */
+        border: 2px solid #555;  /* Slightly thinner border */
+        border-radius: 8px;
+        background: radial-gradient(#48523a, #3a2d2d 40%, #112 80%);
+        color: #f4f5f4;
+        text-align: center;
+        box-shadow: 0 0 8px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 0, 0, 0.8); /* Subtler glow */
+        position: relative;
+        overflow: hidden;
+        width: 70px; /* Smaller width */
+        height: 70px; /* Smaller height */
+    }
 
-.element {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border: 3px solid #555;  /* Subtle dark border for the elements */
-    border-radius: 8px;
-    background: radial-gradient(#48523a, #3a2d2d 40%, #112 80%); /* Organic gradient texture */
-    color: #f4f5f4;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 0, 0, 0.8);  /* Glowing edges */
-    position: relative;
-    overflow: hidden;
-}
 
 .element:hover {
     background: radial-gradient(#444, #333, #1c1c1c, );  /* Hover effect for eerie movement */
@@ -133,7 +139,7 @@ h1 {
 }
 
         .random-lines-section {
-            margin-top: 20px;
+            margin-top: 40px;
             text-align: center;
             color: #f4f5f4; /* Match the table's text color */
         }
