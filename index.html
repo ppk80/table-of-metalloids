@@ -59,7 +59,7 @@ h1 {
         justify-content: center;
         align-items: center;
         padding: 10px; /* Reduced padding */
-        border: 2px solid #555;  /* Slightly thinner border */
+        border: 2px transparent #555;  /* Slightly thinner border */
         border-radius: 8px;
         background: radial-gradient(#48523a, #3a2d2d 40%, #112 80%);
         color: #f4f5f4;
@@ -69,6 +69,11 @@ h1 {
         overflow: hidden;
         width: 70px; /* Smaller width */
         height: 70px; /* Smaller height */
+		border-image-slice: 120 118 144 132;
+        border-image-width: 3px;
+		border-image-outset: 2px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url('border.png');
     }
 
 
