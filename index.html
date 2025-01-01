@@ -8,19 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
 body {
-    font-family: 'Averia Sans Libre', Arial, sans-serif;  /* Use Averia Sans Libre font */
-    background-color: #1d131d;  /* Dark background to evoke depth and mystery */
-    color: #f4f5f4;  /* Light text for contrast */
+    font-family: 'Averia Sans Libre', Arial, sans-serif;
+    background-color: #1d131d;
+    color: #f4f5f4;
+    margin: 0;
     display: flex;
-    flex-direction: column;  /* Stack header and table */
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 0 0 20px 0;
-	margin: 0;
-    background-image: linear-gradient(to bottom, #111114, #121112, #2b0a0a); /* A cosmic, dark gradient */
+    background-image: linear-gradient(to bottom, #111114, #121112, #2b0a0a);
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Adjusts spacing between elements */
+    align-items: center;
+    height: 100%;
+    width: 90%; /* Prevents overflow on small viewports */
+    max-width: 1200px; /* Optional: Restrict maximum width */
+    box-sizing: border-box;
+    padding: 10px; /* Adds spacing around content */
+}
 h1 {
     font-size: 2.5em;
     color: #b0b0b0;  /* Light gray for contrast */
@@ -40,7 +49,6 @@ h1 {
         border-image-width: 80px 80px 80px 80px;
         border-image-outset: 80px 80px 80px 80px;
         border-image-repeat: stretch stretch;
-        border-style: solid;
         border-image-source: url('border.png');
         background: radial-gradient(circle, rgba(199, 97, 117, 0.2), rgba(77, 116, 148, 0.2), rgba(0, 0, 0, 0.1) 70%, transparent 100%);
     }
@@ -190,7 +198,8 @@ h1 {
     </style>
 </head>
 <body>
-    <h1>Table of Metalloids</h1>  <!-- Title Header -->
+<div class="container">
+    <h1><img src="title.png" style="width:60%;"></h1>  <!-- Title Header -->
     <div class="table">
         <!-- Period 2 -->
         <a style="grid-column: 1 / 1; grid-row: 1 / 1;  text-decoration: none;" class="element" href="boron.html" target="_blank">
@@ -246,7 +255,7 @@ h1 {
         <div class="random-line" id="line3">toxic zone, become animal, mineral, deity, vegetable</div>
         <button class="randomize-button" onclick="randomizeLines()">⚗</button>
     </div>
-
+</div>
     <script>
         // Hidden list of lines
 const lines = [
@@ -349,5 +358,6 @@ const lines = [
         }
 
     </script>
+
 </body>
 </html>
