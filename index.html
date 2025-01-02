@@ -171,11 +171,16 @@ h1 {
             font-family: 'Averia Sans Libre', Arial, sans-serif;
             background: radial-gradient(#13111f, #2d403e, #2b1d17);
             color: hsl(72, 36%, 69%);
-            border: 2px solid #555;
-            border-radius: 40%;
+            border: 2px transparent #555;
+            border-radius: 20%;
             box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
             cursor: pointer;
             transition: all 0.3s ease-in-out;
+					border-image-slice: 120 118 144 132;
+        border-image-width: 20px;
+		border-image-outset: 13px;
+        border-image-repeat: stretch stretch;
+        border-image-source: url('border.png');
         }
 
         .randomize-button:hover {
