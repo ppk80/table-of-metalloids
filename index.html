@@ -205,6 +205,41 @@ h1 {
             overflow: hidden;
             cursor: pointer; /* Pointer cursor for interactivity */
         }
+		
+.audio-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100; /* Ensure it stays above other elements */
+}
+
+#audio-player button {
+    background: radial-gradient(circle at center, #3b5e5e, #53464d 30%, #2b2418 80%);
+    color: #a6e5a6;
+    border: 3px groove #888; /* Metallic groove effect */
+    border-radius: 50%;
+    padding: 12px 18px;
+    font-size: 1.6em;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 
+                inset 0 0 5px rgba(150, 255, 150, 0.4); /* Outer glow and inner highlight */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8); /* Neon text glow */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#audio-player button:hover {
+    transform: scale(1.1); /* Subtle zoom effect */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 
+                inset 0 0 8px rgba(150, 255, 150, 0.6); /* Enhanced glow on hover */
+}
+
+#audio-player button:active {
+    transform: scale(0.95); /* Slight compression for tactile feedback */
+    background: radial-gradient(circle at center, #4e7676, #6b5a62 30%, #34291d 90%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 
+                inset 0 0 12px rgba(150, 255, 150, 0.8); /* More intense glow when active */
+}
+
     </style>
 </head>
 <body>
@@ -265,6 +300,13 @@ h1 {
         <div class="random-line" id="line3">toxic zone, become animal, mineral, deity, vegetable</div>
         <button class="randomize-button" onclick="randomizeLines()">⚗</button>
     </div>
+</div>
+<div class="audio-player" id="audio-player">
+    <button id="playPauseButton">▶</button>
+    <audio id="backgroundAudio" loop>
+        <source src="telesterion.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 </div>
     <script>
         // Hidden list of lines
@@ -367,6 +409,19 @@ const lines = [
             document.getElementById("line3").innerText = shuffledLines[2];
         }
 
+
+    const audio = document.getElementById('backgroundAudio');
+    const playPauseButton = document.getElementById('playPauseButton');
+
+    playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseButton.textContent = '⏸'; // Change to pause icon
+        } else {
+            audio.pause();
+            playPauseButton.textContent = '▶'; // Change to play icon
+        }
+    });
     </script>
 
 </body>
